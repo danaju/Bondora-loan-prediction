@@ -11,7 +11,7 @@ it provides investors full control over the loans they can purchase on the prima
 market. In order to know which loans are worth to invest in we first need to obtain the data, 
 process it and train machine-learning models that are capable of predicting loan outcomes.
 
-To clarify, the scope of this project is not to create an application that uses Bondora's 
+To clarify, the scope of this project isn't to create an application that uses Bondora's 
 API to automatically buy loans. Instead we will work with Bondora's publicly available dataset and create a 
 model that is capable of accurately predicting loan outcomes and the model can later be used in 
 such applications. 
@@ -21,7 +21,7 @@ also useful in a real-world scenario.
 
 ## Project description
 
-The project consists of three worksheets:
+The project consists of three main steps:
 1. Data preprocessing
 2. Modeling
 3. Validation
@@ -38,27 +38,27 @@ decide the best model.
 
 ## Results
 
-With a sample size of over 30000 loans, an average annual ROI of at least 11% can be constantly
-reached. The models are validated on a validation set which does not consist 
+With a sample size of almost 30000 loans, an average annual ROI of over 10% can be constantly
+reached. When further optimizing the investing strategy by only investing into loans which have at least 20% interest, then a maximum annual ROI of 15% was achieved.
+The models are validated on a validation set which doesn't consist 
 of any loans that are used in the training set.
 
-Below is a table with top 5 results for the xgboost model with the roc_auc scoring function:
+Below is a table with the top 5 results which are also included in the worksheet. The threshold varies because the table contains different models. 
+More extensive coverage of the results can be found in the worksheet.
 
 | Threshold | Total number of loans | Investments made <br/>(% of total number) | Precision | Average annual ROI |
 |-----------|-----------------------|-------------------------------------------|-----------|--------------------|
-| 0.800     | 31206                 | 0.949%                                    | 0.882     | 11.699%            |
-| 0.750     | 31206                 | 1.779%                                    | 0.843     | 11.650%            |
-| 0.775     | 31206                 | 1.311%                                    | 0.863     | 11.498%            |
-| 0.725     | 31206                 | 2.317%                                    | 0.833     | 11.452%            |
-| 0.700     | 31206                 | 2.961%                                    | 0.828     | 11.262%            |
+| 0.850	    | 29178                 | 1.049%                                    | 0.781	    | 15.002%            |
+| 0.625     | 29178                 | 1.069%                                    | 0.744	    | 14.783%            |
+| 0.825     | 29178                 | 1.494%                                    | 0.727	    | 14.177%            |
+| 0.800     | 29178                 | 2.032%                                    | 0.710	    | 14.039%            |
+| 0.525     | 29178                 | 1.265%                                    | 0.762	    | 13.945%            |
 
-The more extensive coverage of the results can be found in the "3-validation.ipynb" worksheet.
 
 ## Project status
 
-The project is mostly complete and the models can be used for predicting loan outcomes.
-I am still planning to tidy up some code and might even add some things from the list below:
+I'm not currently planning to working on this project anymore, but here are a few ideas that might be worth looking into.
 
 1. Experiment with feature engineering.
-2. Create a more sophisticated strategy, e.g. invest more into loans with higher thresholds and less into loans with lower thresholds.
-3. Include loans from other countries besides EE.
+2. Create a more sophisticated strategy, e.g. invest higher amounts into loans with higher thresholds and less into loans with lower thresholds.
+3. Try to find more optimal hyperparameters and/or use other hyperparameter optimization algorithms.
